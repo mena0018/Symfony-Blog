@@ -66,6 +66,27 @@ database-fixtures-load: ## Load fixtures
 	$(SYMFONY_CONSOLE) doctrine:fixtures:load
 
 
+## —— ✅ Test ——
+databse-test-init: ## Init database for tests
+	$(SYMFONY_CONSOLE) doctrine:database:drop --force --if-exists --env=test
+	$(SYMFONY_CONSOLE) doctrine:database:create --if-not-exists --env=test
+	$(SYMFONY_CONSOLE) doctrine:migrations:migrate --env=test
+	$(SYMFONY_CONSOLE) doctrine:fixtures:load --env=test
+
+test: ## Run tests
+	$(MAKE) databse-test-init
+	$(PHP) bin/phpunit --testdox tests/Unit/
+	$(PHP) bin/phpunit --testdox tests/Functional/
+
+unit-test: ## Run unit tests
+	$(MAKE) database-init-test
+	$(PHP) bin/phpunit --testdox tests/Unit/
+
+functional-test: ## Run functional tests
+	$(MAKE) database-init-test
+	$(PHP) bin/phpunit --testdox tests/Functional/
+
+
 ## —— 💨 Cache ——
 cache-clear: ## Clear the cache
 	$(SYMFONY_CONSOLE) cache:clear
