@@ -1,4 +1,4 @@
-# Symfony-Blog
-Blog made with Symfony and Tailwind-CSS for the development and Docker for the  work environment 
+# Symfony Starter Project
 
-![what-is-a-blog](https://user-images.githubusercontent.com/89834824/197342132-eb211677-388d-4636-b959-52b5e56d8779.png)
+
+![docker-symfony-1024x462](https://user-images.githubusercontent.com/89834824/197603555-56337f2e-f11c-4919-84db-3bde02fdcaf5.png)
