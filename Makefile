@@ -17,16 +17,11 @@ init: ## Init the project
 	@$(call GREEN,"The project is available at: http://127.0.0.1:8000/") 
 
 
-
 ## —— 🐳 Docker ——
 start: ## Start app
-	$(MAKE) docker-start 
-docker-start: ## Start the docker containers
 	$(DOCKER_COMPOSE) up -d
 
 stop: ## Stop app
-	$(MAKE) docker-stop
-docker-stop: 
 	$(DOCKER_COMPOSE) stop
 	@$(call RED,"The containers are now stopped.")
 
@@ -35,8 +30,7 @@ docker-stop:
 composer-install: ## Install the dependencies
 	$(COMPOSER) install
 
-## Update the dependencies
-composer-update:
+composer-update: ## Update the dependencies
 	$(COMPOSER) update
 
 
@@ -72,8 +66,8 @@ database-fixtures-load: ## Load fixtures
 	$(SYMFONY_CONSOLE) doctrine:fixtures:load
 
 
-## Clear the cache
-cache-clear: 
+## —— 💨 Cache ——
+cache-clear: ## Clear the cache
 	$(SYMFONY_CONSOLE) cache:clear
 
 
