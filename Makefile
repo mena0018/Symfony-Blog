@@ -41,6 +41,9 @@ npm-install: ## Install all npm dependencies
 npm-update: ## Update all npm dependencies
 	$(NPM) update
 
+npm-watch: ## Update all npm dependencies
+	$(NPM) run watch
+
 
 ## —— 📊 Database ——
 database-init: ## Init database
