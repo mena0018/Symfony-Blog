@@ -1,6 +1,6 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  // "editor.formatOnSave": true,
+  "editor.formatOnSave": true,
   "editor.detectIndentation": true,
   "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
   "editor.rulers": [80],
@@ -32,5 +32,8 @@
   "explorer.confirmDelete": false,
   "workbench.iconTheme": "material-icon-theme",
   "git.autofetch": true,
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "[twig]": {
+    "editor.defaultFormatter": "mblode.twig-language-2"
+  }
 }
